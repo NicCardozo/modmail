@@ -212,7 +212,7 @@ class Thread:
         created = str((time - user.created_at).days)
         embed = discord.Embed(
             color=color,
-            description=f"{user.mention} was created {days(created)}",
+            description=f"{user.mention} создан {days(created)}",
             timestamp=time,
         )
 
@@ -227,7 +227,7 @@ class Thread:
         if member is not None:
             joined = str((time - member.joined_at).days)
             # embed.add_field(name='Joined', value=joined + days(joined))
-            embed.description += f", joined {days(joined)}"
+            embed.description += f", вступил на сервер {days(joined)}"
 
             if member.nick:
                 embed.add_field(name="Nickname", value=member.nick, inline=True)
@@ -239,8 +239,8 @@ class Thread:
 
         if log_count is not None:
             # embed.add_field(name='Past logs', value=f'{log_count}')
-            thread = "thread" if log_count == 1 else "threads"
-            embed.description += f" with **{log_count or 'no'}** past {thread}."
+            thread = "закрытая тема" if log_count == 1 else "закрытых тем"
+            embed.description += f" имеет **{log_count or 'no'}** {thread}."
         else:
             embed.description += "."
 
