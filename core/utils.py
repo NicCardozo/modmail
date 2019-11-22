@@ -149,8 +149,8 @@ def days(day: typing.Union[str, int]) -> str:
     """
     day = int(day)
     if day == 0:
-        return "**today**"
-    return f"{day} day ago" if day == 1 else f"{day} days ago"
+        return "**сегодня**"
+    return f"{day} д. назад" if day == 1 else f"{day} д. назад"
 
 
 def cleanup_code(content: str) -> str:
